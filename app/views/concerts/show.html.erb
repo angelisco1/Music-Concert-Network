@@ -1,0 +1,9 @@
+<h1><%= @concert.band %></h1>
+
+<ul>
+	<li>Description: <%= @concert.description %></li>
+	<li>Date: <%= @concert.date %></li>
+	<li>Address: <%= @concert.city %> - <%= @concert.venue %></li>
+	<li>Price: <%= @concert.price %> €</li>
+</ul>
+<%= link_to("Concerts", concerts_path) %>
