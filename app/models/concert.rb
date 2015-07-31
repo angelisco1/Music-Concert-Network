@@ -10,4 +10,8 @@ class Concert < ActiveRecord::Base
 		where("id= ?", id).first
 	end
 
+	def self.next_concerts
+		where("date> ? and date< ?", DateTime.now, DateTime.now.end_of_month)
+	end
+
 end

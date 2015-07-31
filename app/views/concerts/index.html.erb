@@ -4,5 +4,9 @@
 <% @concerts.each do |concert| %>
 	<li><%= link_to(concert.band, concert_path(concert)) %></a> - <%= concert.description %></li>
 <% end %>
+<h2>Next concerts in the current month</h2>
+<% @next_concerts.each do |concert| %>
+	<li><%= link_to(concert.band, concert_path(concert)) %></a> - <%= concert.description %></li>
+<% end %>
 <%= link_to("New concert", new_concert_path) %>
 </ul>

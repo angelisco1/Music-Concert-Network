@@ -2,6 +2,7 @@ class ConcertsController < ApplicationController
 
 	def index
 		@concerts = Concert.get_events_today
+		@next_concerts = Concert.next_concerts
 	end
 
 	def new
@@ -21,6 +22,7 @@ class ConcertsController < ApplicationController
 	def show
 		@concert = Concert.get_concert params[:id]
 	end
+
 
 	private
 	def concert_params
