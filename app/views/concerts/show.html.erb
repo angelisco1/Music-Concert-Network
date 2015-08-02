@@ -7,3 +7,4 @@
 	<li>Price: <%= @concert.price %> €</li>
 </ul>
 <%= link_to("Concerts", concerts_path) %>
+<%= link_to("New comment", new_concert_comment_path(@concert)) %>

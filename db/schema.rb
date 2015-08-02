@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731103953) do
+ActiveRecord::Schema.define(version: 20150802102458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "concert_id"
+  end
 
   create_table "concerts", force: :cascade do |t|
     t.string   "band"
@@ -25,6 +32,13 @@ ActiveRecord::Schema.define(version: 20150731103953) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "concert_id"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

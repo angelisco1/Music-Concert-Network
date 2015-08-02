@@ -1,0 +1,8 @@
+<h1><%= @band %></h1>
+<ul>
+<% @comments.each do |comment| %>
+	<li><%= comment.id %> - <%= comment.comment %></li>
+<% end %>
+</ul>
+<%= link_to("New comment", concert_comments_path(@concert.id)) %>
+<%= link_to("Concerts", concerts_path) %>
